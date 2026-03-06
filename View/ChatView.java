@@ -39,6 +39,8 @@ public class ChatView {
         Jpanel topPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         topPanel.add(disconnectButton);
         mainPanel.add(topPanel, BorderLayout.SOUTH);
-        
+
     }
+
+    
 }
