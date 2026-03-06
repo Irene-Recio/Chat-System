@@ -18,12 +18,18 @@ public class ChatController {
     }
 
     public void sendMessage(Message message, List<User> recipients) {
-    
+        chatItems.add(message);
+        // Notify recipients about the new message
+        for (User recipient : recipients) {
+            recipient.notifyMessage(message);
+        }
     }
 
      public void sendFile(File file, List<User> recipients) {
-     }
-
-     public void receiveItem(ChatItem item) {
+        chatItems.add(file);
+        // Notify recipients about the new file
+        for (User recipient : recipients) {
+            recipient.notifyFile(file);
+        }
      }
 }
