@@ -23,5 +23,18 @@ public class UserController {
         }
     }
 
+    public void notifyUserDisconnected(User user) {
+        users.remove(user.getId());
+        Message message = new Message(randomId(), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has disconnected.");
+        // Notify all users about the disconnection
+        for (User otherUser : users.values()) {
+            if (!otherUser.getId().equals(user.getId())) {
+                // Send message to otherUser
+                otherUser.notifyDisconnection(message);
+            }
+        }
+    }
+    
+
     
 }

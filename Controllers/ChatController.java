@@ -1,6 +1,6 @@
 public class ChatController {
 
-    privaete List<ChatItem> chatItems;
+    private List<ChatItem> chatItems;
 
     public ChatController() {
         this.chatItems = new ArrayList<>();
