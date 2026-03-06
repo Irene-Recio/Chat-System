@@ -1,3 +1,3 @@
-public class File extebnds ChatItem {
+public class File extends ChatItem {
     
 }
