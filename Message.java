@@ -1,16 +1,3 @@
-public class Message {
-    private String text;
+public class Message extends ChatItem {
 
-    public Message(String text) {
-        this.text = text;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-    
 }
