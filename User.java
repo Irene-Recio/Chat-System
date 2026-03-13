@@ -1,13 +1,9 @@
 public class User {
-    private enum Status {
-        CONNECTED,
-        DISCONNECTED
-    }
     private String username;
     private HostInfo hostInfo;
-    private Status status;
+    private ConnectionStatus status;
 
-    public User(String username, HostInfo hostInfo, Status status) {
+    public User(String username, HostInfo hostInfo, ConnectionStatus status) {
         this.username = username;
         this.hostInfo = hostInfo;
         this.status = status;
@@ -29,12 +25,21 @@ public class User {
         this.hostInfo = hostInfo;
     }
 
-    public Status getStatus() {
+    public ConnectionStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(ConnectionStatus status) {
         this.status = status;
     }
+
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", hostInfo=" + hostInfo +
+                ", status=" + status +
+                '}';
+    }
+    
 
 }

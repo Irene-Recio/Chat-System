@@ -2,7 +2,7 @@ class HostInfo {
     private String ip;
     private int port;
 
-    
+
     public HostInfo(String ip, int port) {
         this.ip = ip;
         this.port = port;
@@ -22,5 +22,12 @@ class HostInfo {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public String toString() {
+        return "HostInfo{" +
+                "ip='" + ip + '\'' +
+                ", port=" + port +
+                '}';
     }
 }
