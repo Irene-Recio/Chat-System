@@ -1,4 +1,8 @@
 public class User {
+    private enum Status {
+        CONNECTED,
+        DISCONNECTED
+    }
     private String username;
     private HostInfo hostInfo;
     private Status status;
