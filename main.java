@@ -11,7 +11,14 @@ public class Main {
             //1- User login
                 var username = LoginView.getUsername();
                 chatController.connect(username);
-                
+
+            //2- Update user list
+                userListView.updateUserList(chatController.getConnectedUsers());
+
+            //3- Inform other users
+                ChatItem chatItem = new ChatItem(username, "has joined the chat");
+                chatController.sendMessage(chatItem, chatController.getConnectedUsers());
+
             
 
     }
