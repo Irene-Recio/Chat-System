@@ -1,9 +1,9 @@
 public class User {
     private String username;
-    private hostInfo hostInfo;
-    private status status;
+    private HostInfo hostInfo;
+    private Status status;
 
-    public User(String username, hostInfo hostInfo, status status) {
+    public User(String username, HostInfo hostInfo, Status status) {
         this.username = username;
         this.hostInfo = hostInfo;
         this.status = status;
@@ -17,19 +17,19 @@ public class User {
         this.username = username;
     }
 
-    public hostInfo getHostInfo() {
+    public HostInfo getHostInfo() {
         return hostInfo;
     }
 
-    public void setHostInfo(hostInfo hostInfo) {
+    public void setHostInfo(HostInfo hostInfo) {
         this.hostInfo = hostInfo;
     }
 
-    public status getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(status status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
