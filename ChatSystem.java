@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.io.*;
 import java.net.*;
 
+//Note : C'est juste une base fonctionnelle, pas encore adaptée pour le projet
+
 public class ChatSystem {
     private static final String SERVER_IP = "10.8.22.214"; // A voir comment on gère ça ? On change l'ip d'un pc pour le faire et hop ? Jsp
     private static final int SERVER_PORT = 4422;
@@ -24,7 +26,6 @@ public class ChatSystem {
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
         myUsername = showUsernameDialog(in);
-        //Faut rentrer quelque chose
         if (myUsername == null) {
             System.exit(0);
         }
