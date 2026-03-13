@@ -35,4 +35,8 @@ public class LoginView {
         frame.setVisible(true);
     }
 
+    public String getUsername() {
+        return usernameField.getText();
+    }
+
 }

@@ -8,6 +8,11 @@ public class Main {
             UserListView userListView = new UserListView();
             NotificationView notificationView = new NotificationView();
             
+            //1- User login
+                var username = LoginView.getUsername();
+                chatController.connect(username);
+                
+            
 
     }
 
