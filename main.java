@@ -16,7 +16,7 @@ public class Main {
                 userListView.updateUserList(chatController.getConnectedUsers());
 
             //3- Inform other users
-                ChatItem chatItem = new ChatItem(username, "has joined the chat");
+                ChatItem chatItem = new ChatItem(username, " is connected.");
                 chatController.sendMessage(chatItem, chatController.getConnectedUsers());
 
             
