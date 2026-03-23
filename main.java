@@ -19,7 +19,11 @@ public class Main {
                 ChatItem chatItem = new ChatItem(username, " is connected.");
                 chatController.sendMessage(chatItem, chatController.getConnectedUsers());
 
-            
+            //4- Send message
+                message = ChatView.getMessage();
+                chatItem = new ChatItem(username, message);
+                chatController.sendMessage(chatItem, chatController.getConnectedUsers());
+                
 
     }
 
