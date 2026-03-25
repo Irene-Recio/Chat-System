@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+import java.util.List;
+
 public class ChatSession {
     private User localUser;
     private List<User> connectedUsers;

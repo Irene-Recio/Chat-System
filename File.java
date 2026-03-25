@@ -1,3 +1,5 @@
+import java.util.Date;
+import java.util.List;
 public class File extends ChatItem {
     private String fileName;
 

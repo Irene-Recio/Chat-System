@@ -1,3 +1,6 @@
+import java.util.Date;
+import java.util.List;
+
 public class Message extends ChatItem {
         private String text;
 

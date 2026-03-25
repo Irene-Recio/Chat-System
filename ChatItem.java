@@ -1,3 +1,5 @@
+import java.util.Date;
+import java.util.List;
 public class ChatItem {
     private String id;
 
