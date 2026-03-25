@@ -20,7 +20,7 @@ public class ChatSession {
         connectedUsers.remove(user);
     }
 
-    public void getConnectedUsers() {
+    public List<User> getConnectedUsers() {
         return connectedUsers;
     }
     
