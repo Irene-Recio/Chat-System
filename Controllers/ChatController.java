@@ -25,18 +25,18 @@ public class ChatController {
         UserController.getInstance().notifyUserDisconnected(user);
     }
 
-    public void sendMessage(Message message, List<User> recipients) {
+    public void sendMessage(Message message, List<User> receivers) {
         chatItems.add(message);
         // Notify receiver about the new message
-        for (User receiver : recipients) {
+        for (User receiver : receivers) {
             receiver.notifyMessage(message);
         }
     }
 
-     public void sendFile(File file, List<User> recipients) {
+     public void sendFile(File file, List<User> receivers) {
         chatItems.add(file);
         // Notify receiver about the new file
-        for (User receiver : recipients) {
+        for (User receiver : receivers) {
             receiver.notifyFile(file);
         }
      }
