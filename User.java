@@ -17,19 +17,19 @@ public class User {
         this.username = username;
     }
 
-    public hostInfo getHostInfo() {
+    public HostInfo getHostInfo() {
         return hostInfo;
     }
 
-    public void setHostInfo(hostInfo hostInfo) {
+    public void setHostInfo(HostInfo hostInfo) {
         this.hostInfo = hostInfo;
     }
 
-    public status getStatus() {
+    public ConnectionStatus getStatus() {
         return status;
     }
 
-    public void setStatus(status status) {
+    public void setStatus(ConnectionStatus status) {
         this.status = status;
     }
 
