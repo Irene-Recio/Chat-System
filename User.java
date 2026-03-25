@@ -2,6 +2,7 @@ public class User {
     private String username;
     private HostInfo hostInfo;
     private ConnectionStatus status;
+    private String notification;
 
     public User(String username, HostInfo hostInfo, ConnectionStatus status) {
         this.username = username;
@@ -33,4 +34,11 @@ public class User {
         this.status = status;
     }
 
+    public void notifyMessage(Message message) {
+        this.notification = "New message from " + message.getSender().getUsername() + ": " + message.getText();
+    }
+
+    public void notifyFile(File file) {
+        this.notification = "New file from " + file.getSender().getUsername() + ": " + file.getFileName();
+    }
 }

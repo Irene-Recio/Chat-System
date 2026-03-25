@@ -5,13 +5,13 @@ public class UserController {
         this.users = new HashMap<>();
     }
 
-    public void refreshUserList(List<User> userList) {
+    public static void refreshUserList(List<User> userList) {
         for (User user : userList) {
             users.put(user.getId(), user);
         }
     }
 
-    public void notifyUserConnected(User user) {
+    public static void notifyUserConnected(User user) {
         users.put(user.getId(), user);
         Message message = new Message(randomId(), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has connected.");
         // Notify all users about the new connection
@@ -23,7 +23,7 @@ public class UserController {
         }
     }
 
-    public void notifyUserDisconnected(User user) {
+    public static void notifyUserDisconnected(User user) {
         users.remove(user.getId());
         Message message = new Message(randomId(), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has disconnected.");
         // Notify all users about the disconnection

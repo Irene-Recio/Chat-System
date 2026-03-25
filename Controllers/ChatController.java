@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
 public class ChatController {
 
     private List<ChatItem> chatItems;
@@ -7,12 +10,12 @@ public class ChatController {
     }
 
     public void connect(String username) {
-        User user = new User(randomId(), username);
+        User user = new User(username, new HostInfo("127.0.0.1", 8080), new ConnectionStatus(true));
         ChatSession session = new ChatSession(user);
         session.addUser(user);
 
         // Notify UserController about the new connection
-        UserController.getInstance().notifyUserConnected(user);
+        UserController.notifyUserConnected(user);
     }
 
     public void disconnect(User user) {
@@ -22,7 +25,7 @@ public class ChatController {
         }
 
         // Notify UserController about the disconnection
-        UserController.getInstance().notifyUserDisconnected(user);
+        UserController.notifyUserDisconnected(user);
     }
 
     public void sendMessage(Message message, List<User> receivers) {
