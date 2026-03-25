@@ -6,7 +6,7 @@ public class ChatController {
         this.chatItems = new ArrayList<>();
     }
 
-    public void connect(username) {
+    public void connect(String username) {
         User user = new User(randomId(), username);
         ChatSession session = new ChatSession(user);
         session.addUser(user);
