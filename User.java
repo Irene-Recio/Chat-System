@@ -1,9 +1,9 @@
 public class User {
     private String username;
-    private hostInfo hostInfo;
-    private status status;
+    private HostInfo hostInfo;
+    private ConnectionStatus status;
 
-    public User(String username, hostInfo hostInfo, status status) {
+    public User(String username, HostInfo hostInfo, ConnectionStatus status) {
         this.username = username;
         this.hostInfo = hostInfo;
         this.status = status;
