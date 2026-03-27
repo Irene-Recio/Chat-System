@@ -1,3 +1,4 @@
+import java.util.*;
 public class UserController {
     private Map<String, User> users;
 
@@ -5,18 +6,19 @@ public class UserController {
         this.users = new HashMap<>();
     }
 
-    public static void refreshUserList(List<User> userList) {
+    public void refreshUserList(List<User> userList) {
         for (User user : userList) {
-            users.put(user.getId(), user);
+            users.put(user.getUsername(), user);
         }
     }
 
     public static void notifyUserConnected(User user) {
-        users.put(user.getId(), user);
-        Message message = new Message(randomId(), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has connected.");
+        Random random = new Random();
+        users.put(user.getUsername(), user);
+        Message message = new Message(random.nextInt(1000), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has connected.");
         // Notify all users about the new connection
         for (User otherUser : users.values()) {
-            if (!otherUser.getId().equals(user.getId())) {
+            if (!otherUser.getUsername().equals(user.getUsername())) {
                 // Send message to otherUser
                 otherUser.notifyConnection(message);
             }
@@ -24,11 +26,12 @@ public class UserController {
     }
 
     public static void notifyUserDisconnected(User user) {
-        users.remove(user.getId());
-        Message message = new Message(randomId(), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has disconnected.");
+        Random random = new Random();
+        users.remove(user.getUsername());
+        Message message = new Message(random.nextInt(1000), new Date(), user, new ArrayList<>(), "User " + user.getUsername() + " has disconnected.");
         // Notify all users about the disconnection
         for (User otherUser : users.values()) {
-            if (!otherUser.getId().equals(user.getId())) {
+            if (!otherUser.getUsername().equals(user.getUsername())) {
                 // Send message to otherUser
                 otherUser.notifyDisconnection(message);
             }

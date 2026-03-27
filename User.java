@@ -41,4 +41,8 @@ public class User {
     public void notifyFile(File file) {
         this.notification = "New file from " + file.getSender().getUsername() + ": " + file.getFileName();
     }
+
+    public void notifyConnection(Message message) {
+        this.notification = message.getText();
+    }
 }

@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.List;
 public class ChatItem {
-    private String id;
+    private Integer id;
 
     private Date timestamp;
 
@@ -9,14 +9,14 @@ public class ChatItem {
 
     private List<User> recipients;
 
-        public ChatItem(String id, Date timestamp, User sender, List<User> recipients) {
+        public ChatItem(Integer id, Date timestamp, User sender, List<User> recipients) {
             this.id = id;
             this.timestamp = timestamp;
             this.sender = sender;
             this.recipients = recipients;
         }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 

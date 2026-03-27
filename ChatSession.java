@@ -23,5 +23,12 @@ public class ChatSession {
     public List<User> getConnectedUsers() {
         return connectedUsers;
     }
+
+    public ChatSession getUserSession(User user) {
+        if (connectedUsers.contains(user)) {
+            return this;
+        }
+        return null;
+    }
     
 }
