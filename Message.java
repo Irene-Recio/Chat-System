@@ -1,7 +1,11 @@
-public class Message {
+import java.util.Date;
+import java.util.List;
+
+public class Message extends ChatItem {
     private String text;
 
-    public Message(String text) {
+    public Message(String id, Date timestamp, User sender, List<User> recipients, String text) {
+        super(id, timestamp, sender, recipients);
         this.text = text;
     }
 

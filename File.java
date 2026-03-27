@@ -1,13 +1,18 @@
-public class File {
+import java.util.Date;
+import java.util.List;
+
+public class File extends ChatItem {
     private String filename;
     private byte[] content;
     private long size;
 
-    public File(String filename, byte[] content) {
+    public File(String id, Date timestamp, User sender, List<User> recipients, String filename, byte[] content) {
+        super(id, timestamp, sender, recipients);
         this.filename = filename;
         this.content = content;
         this.size = content.length;
     }
+    
 
     public String getFilename() {
         return filename;
@@ -39,4 +44,5 @@ public class File {
                 ", size=" + size +
                 '}';
     }
+
 }
