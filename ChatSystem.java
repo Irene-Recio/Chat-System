@@ -38,9 +38,25 @@ public class ChatSystem {
                 while ((line = in.readLine()) != null) {
                     handleMessage(line);
                 }
+                //Fermer le socket si on sort de la boucle
+                appendMessage("[Serveur déconnecté]");
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                System.exit(0);
             } catch (IOException e) {
                 // Pour prévenir qu'on quitte si on ferme
                 appendMessage("[Connexion perdue]");
+                //Fermer le socket en cas d'erreur
+                try {
+                    socket.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                System.exit(0);
+
             }
         }).start();
     }
