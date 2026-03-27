@@ -21,7 +21,7 @@ public class ChatSystem {
     private static JList<String> userList;
 
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket(SERVER_IP, SERVER_PORT);
+        Socket socket = new Socket(SERVER_IP, SERVER_PORT); //Probleme: le socket reste ouvert
         out = new PrintWriter(socket.getOutputStream(), true);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
