@@ -19,9 +19,10 @@ public class ChatSystem {
     private static JLabel chatTitleLabel;
     private static DefaultListModel<String> userListModel;
     private static JList<String> userList;
+    private static Socket socket;
 
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket(SERVER_IP, SERVER_PORT); //Probleme: le socket reste ouvert
+        socket = new Socket(SERVER_IP, SERVER_PORT); //Probleme: le socket reste ouvert
         out = new PrintWriter(socket.getOutputStream(), true);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
@@ -121,7 +122,19 @@ public class ChatSystem {
     private static void buildChatUI() {
         JFrame frame = new JFrame("Chat — " + myUsername);
         frame.setSize(650, 450);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Fermer le socket à la fermeture de la fenêtre
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    socket.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                System.exit(0);
+            }
+        });
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout(4, 4));
 
